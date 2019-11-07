@@ -1,0 +1,5 @@
+/* 小程序会在wxml外面加一层page */
+/* 不是所有全局样式都被继承，只有 font, color 才会被继承 */
+page{
+  font-family: "PingFangSC-Thin";
+}

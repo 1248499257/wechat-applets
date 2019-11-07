@@ -1,0 +1,23 @@
+/* 设计小程序的时候最好按照 iphone6的机型设置 width 750 height 1334*/
+/* rpx可以自适应，在i6中rpx是  1 ：1 */
+.container{
+  display: inline-flex;
+  flex-direction: row;
+  padding: 10rpx;
+  width: 90rpx;
+}
+
+.container image{
+  width: 32rpx;
+  height: 28rpx;
+}
+
+/* 文字本身有间距，需要消除 */
+.container text{
+  position: relative;
+  bottom: 10rpx;
+  left: 6rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  color: #bbbbbb;
+}

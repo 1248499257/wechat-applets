@@ -1,0 +1,20 @@
+<wxs module="m1">
+  var addZero = function(index){
+    var i = index < 10? '0' + index : index
+    return i
+  }
+
+  module.exports.addZero = addZero
+</wxs>
+
+<view class="container">
+  <view class="index-container">
+    <text class="plain">NO.</text>
+    <text class="index">{{m1.addZero(index)}}</text>
+    <text class="line"></text>
+  </view>
+  <view class="data-container">
+    <text class="month">{{month}}</text>
+    <text class="year">{{year}}</text>
+  </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/classic/classic.wxml-->
+<!-- 组件可以分为两大类 1.微信官方组件 2.自定义组件 -->
+<view class="container">
+  <view class="header">
+    <v-epsoide index="{{classicData.index}}" class="epsoide"/>
+    <v-like bind:like="onLike" 
+            like="{{likeStatus}}" 
+            count="{{likeCount}}"
+            class="like"/>
+  </view>
+  <v-movie  hidden="{{classicData.type!=100}}" img="{{classicData.image}}" content="{{classicData.content}}"/>
+  <v-essay  hidden="{{classicData.type!=300}}" img="{{classicData.image}}" content="{{classicData.content}}"/>
+  <v-music  src="{{classicData.url}}" wx:if ="{{classicData.type ==200}}" img="{{classicData.image}}" content="{{classicData.content}}"/>
+
+  <v-navi title ="{{classicData.title}}"
+          latest="{{latest}}"
+          first ="{{first}}"
+          bind:left  = "onLeft"
+          bind:right = "onRight"
+          class      = "navi"/>
+
+</view>
