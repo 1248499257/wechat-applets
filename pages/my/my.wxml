@@ -1,0 +1,31 @@
+<view class="container">
+  <image src="/images/my/my@bg.png" class="bg"></image>
+  <!-- <open-data type="userAvatarUrl" class="avatar avatar-position" /> -->
+  <v-button wx:if="{{!authorized}}" open-type="getUserInfo" bind:getuserinfo="onGetUserInfo"               class="avatar-position">
+    <image slot="img" class="avatar" src="/images/my/my.png"></image>
+  </v-button>
+  <view wx:if="{{authorized}}" class="avatar-container avatar-position">
+    <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+  <view class="about-container">
+    <view class="about-us" bind:tap="onJumpToAbout">
+      <image src="/images/my/about.png"></image>
+      <text class="description">关于个人</text>
+    </view>
+    <view class="about-us">
+      <text class="book-num">{{bookCount}}</text>
+      <text class="description">喜欢的书</text>
+    </view>
+  </view>
+
+  <view class="like-container">
+    <image class="headline" src="/images/my/like.png"></image>
+    <view class="preview-container">
+      <block wx:for="{{classics}}" wx:key="">
+        <v-preview class="preview" classic="{{item}}" />
+      </block>
+    </view>
+  </view>
+  <!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权</button> -->
+</view>
